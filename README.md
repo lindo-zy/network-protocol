@@ -220,8 +220,75 @@ HTTP/1.1　　200　ok
 Date: Tue ,10 Jul 2017 06:50:15 GMT  
 Content-Length:362  
 Content-Type:text/html  
+
+
 ---
-HTTP是不保存状态的协议
+### HTTP方法  
+
+GET：用来请求访问已经被URI识别的资源  
+请求：GET/index.html　HTTP/1.1  
+响应：返回index.html的页面资源  
+---
+
+POST：传输实体的主体  
+请求:POST/submit.cgi　HTTP/1.1  
+　　 Host:www.a.com  
+　　 Content-Length:1560  
+响应:返回submit.cgi接受数据的处理结果
+---
+
+
+PUT：传输文件，一般不用  
+
+---
+
+HEAD:获取报文首部，不返回报文主体部分，用于确认URI有效性等  
+请求:HEAD/index.html　HTTP/1.1  
+　　HOST：www.a.com  
+响应:返回index.html有关响应的首部
+
+---
+
+DELETE：删除文件，一般不用  
+
+---
+
+OPTIONS:询问支持的方法  
+请求：OPTIONS*HTTP/1.1  
+　　　HOST:www.a.com  
+响应:HTTP/1.1 200 ok  
+　　Allow:GET,POST,HEAD,OPTIONS  
+　　返回服务器支持的方法  
+
+---
+
+TRACE:追踪路径，一般不用  
+
+---
+CONNECT：使用隧道协议连接代理  
+
+---
+
+### Cookie  
+HTTP是无状态协议，为了保存用户状态引入了Cookie  
+
+请求报文(无Cookie信息的状态)  
+GET/reader/HTTP/1.1  
+HOST:a.com  
+
+
+响应报文(服务端生成了Cookie信息)  
+HTTP/1.1 200 OK  
+Date：Thu，12，Jul 2012 07:12:20 GMT  
+Server:Apache  
+<Set-Cookie:sid=12331444141; path=/; expires=Wed,10-Oct-12 07:12:20 GMT>  
+Content-Type:text/plain;charset=UTF-8
+
+
+请求报文(自动发送保存的Cookie信息)  
+GET/image/HTTP/1.1  
+HOST:a.com  
+Cookie:sid=1232312312312  
 
 
 
