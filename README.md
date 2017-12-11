@@ -120,3 +120,112 @@ A->B |ACK(针对FIN的确认应答)
 路由算法：距离向量算法、链路状态算法  
 RIP：路由信息协议，基于距离矢量算法的路由协议，利用跳数来作为计量标准。
 
+OSPF:链路状态型路由协议，出现环路也能稳定控制路由。
+
+---
+
+http协议状态
+状态 | 动作
+---|---
+信息提供 |
+100 | continue
+101 | switching protocols
+肯定应答| 
+200 | OK
+201 | Created
+202 | Accept
+203 | Non-Authoritative info
+204 | No Content
+205 | Reset Content
+206 | Partial Content
+重定向请求|
+300 | Multiple Choices
+301 | Moved Permanently
+302 | Move temporarily
+303 | See Other
+304 | Not Modified
+305 | Use Proxy
+请求错误|
+400 | Bad Request
+401 | Unauthorized
+402 | Payment Required
+403 | Forbidden
+404 | Not Found
+405 | Method Not Allowed
+406 | Not Acceptable
+407 | Proxy Authentication Required
+408 | Request Timeout
+409 | Conflict
+410 | Gone
+411 | Length Required
+412 | Precondition Failed
+413 | Request Entity Too Large
+414 | Request-URI Too Long
+415 | Unsupported Media Type
+服务器错误|
+500 | Internal Server Error
+501 | Not Implemented
+502 | Bad Gateway
+503 | Service Unavailable
+504 | Gateway Timeout
+505 | Http Version Not Supported
+600 | Unparseable Response Headers
+----
+## HTTP协议  
+参考:《图解HTTP》 
+
+----
+HTTP：超文本传输协议  
+访问一个页面，例如 www.a.com  
+
+流程 | 动作
+---|---
+客户端->DNS服务器| 请求www.a.com的IP地址
+DNS->客户端 | 返回请求的IP地址
+客户端->服务端| HTTP请求报文</br>TCP将请求报文可靠发送给对方</br>IP协议，搜索地址，中转和传送</br>TCP收到请求报文，重组报文</br>HTTP处理请求的web内容
+服务端->客户端|同上回传
+
+</br>
+URI：统一资源标识符  
+
+URL：统一资源定位符  
+</br>
+绝对URI格式：  
+http://user:pass@www.a.com:80/dir/index.html?uid=1#ch1
+
+字符 | 内容
+---|---
+http | 协议方案名
+user:pass | 登陆信息(认证)
+www.a.com | 服务器地址
+80 | 服务端口号
+/dir/index.html | 带层次的文件路径
+uid=1 | 查询字符串
+ch1| 片段标识符
+
+---
+请求报文：请求方法+请求URI+协议版本+可选的请求首部字符+内容实体  
+</br>
+
+POST 　　  /form/entry　　      HTTP/1.1  
+Host:a.com  
+Connection:keep-alive  
+Content-Type:application/x-www-form-urlencoded  
+Content-Length:16  
+name=Alice&age=13  
+
+响应报文：协议版本+状态码+原因短语+可选的响应首部字段+实体主体  
+</br>
+HTTP/1.1　　200　ok  
+Date: Tue ,10 Jul 2017 06:50:15 GMT  
+Content-Length:362  
+Content-Type:text/html  
+---
+HTTP是不保存状态的协议
+
+
+
+
+
+
+
