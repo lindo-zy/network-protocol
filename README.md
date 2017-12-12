@@ -294,6 +294,115 @@ GET/image/HTTP/1.1
 HOST:a.com  
 Cookie:sid=1232312312312  
 
+---
+### HTTP报文  
+
+ 名称| 作用
+---|---
+报文首部 | 服务端或客户端需处理的请求或响应的内容及属性
+空行(CR+LF) | 回车符和换行符
+报文主体 | 应被发送的数据
+
+
+</br>
+
+报文结构
+请求报文 | 响应报文
+---|---
+请求行  | 状态行
+请求首部字段 |响应首部字段
+通用首部字段 |通用首部字段
+实体首部字段 |实体首部字段
+其他 |其他
+
+请求行：包含请求方法，请求URI和HTTP版本  
+
+状态行：包含表面响应结果的状态码，原因短语和HTTP版本  
+
+首部字段：包含表示请求和响应的各种条件和属性的各类首部，通用首部、请求首部、响应首部、实体首部  
+
+其他：可能包含HTTP的RFC里未定义的首部(Cookie等)
+
+---
+### HTTP状态码  
+
+名称 | 类别| 原因短语
+---|---|---  
+1XX | informational(信息性状态码)| 接收的请求正在处理
+2XX | Success(成功状态码)| 请求正常处理完毕
+3XX | Redirection(重定向状态码)| 需要进行附加操作完成请求
+4XX | Client Error(客户端错误状态码)| 服务器无法处理请求
+5XX | Server Error(服务器错误状态码)| 服务器处理请求出错  
+
+
+</br>
+
+通用首部字段 | 说明
+---|---
+Cache-Control | 控制缓存行为
+Connection| 逐跳首部、连接管理
+Date | 创建报文的日期时间
+Pragma | 报文指令
+Trailer | 报文末端的首部一览
+Transfer-Encoding | 指定报文主体的传输编码方式
+Upgrade | 升级为其他协议
+Via | 代理服务器相关信息
+Wanring | 错误通知
+
+</br>
+
+请求首部字段 | 说明
+---|---
+Accept | 用户代理可处理的媒体类型
+Accept-Charset | 优先字符集
+Accept-Language | 优先语言
+Authorization | Web认证信息
+Expert | 服务器的特定行为
+From |  用户的电子邮箱地址
+ Host|请求资源所在的服务器
+ Proxy-Authoriztation | 代理服务器要求客户端的认证信息
+ User-Agent | HTTP客户端程序信息
+ 
+ </br>
+ 
+
+响应首部字段 | 说明
+---|---
+Accept_Ranges | 是否接受字节范围请求
+Age | 推算资源创建经过的时间
+Location | 令客户端重定向至指定URI
+Proxy-Authenticate |代理服务器对客户端的认证信息
+Retry-After |   对再次发起请求的时机要求
+Server | HTTP服务器的安装信息
+Vary | 代理服务器的缓存管理信息
+ WWW-Authenticate|  服务器对客户端的认证信息 
+ 
+ 
+ </br>
+ 
+
+实体首部字段 | 说明
+---|---
+Allow | 资源可支持的HTTP方法
+Content-Encoding | 实体主体适用的编码方式
+Content-Language | 实体主体的自然语言 
+Content-Length | 实体主体的大小(字节)
+ Contnet-MD5|实体主体的报文摘要
+  Content-Range|    实体主体的位置范围
+  Content-Type |    实体主体的媒体类型
+   Expires|实体主体过期日期
+Last-Moidfied    |资源最后的修改的日期 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
