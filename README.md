@@ -227,11 +227,13 @@ Content-Type:text/html
 
 
 ---
+
 ### HTTP方法  
 
 GET：用来请求访问已经被URI识别的资源  
 请求：GET/index.html　HTTP/1.1  
 响应：返回index.html的页面资源  
+
 ---
 
 POST：传输实体的主体  
@@ -239,6 +241,7 @@ POST：传输实体的主体
 　　 Host:www.a.com  
 　　 Content-Length:1560  
 响应:返回submit.cgi接受数据的处理结果
+
 ---
 
 
